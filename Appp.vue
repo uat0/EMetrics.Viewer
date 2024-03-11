@@ -1,10 +1,10 @@
-<script setup></script>
-
 <template>
   <div class="rereer">
     <h1>Вход</h1>
   </div>
 </template>
+
+<script setup></script>
 
 <style scoped>
 .rereer {

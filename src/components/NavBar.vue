@@ -11,7 +11,6 @@
             </ul>
         </nav>
     </header>
-
 </template>
 
 <script>
@@ -79,7 +78,7 @@ header {
     .navigation {
         display: flex;
         flex: 1;
-        justify-content:space-evenly;
+        justify-content:space-around;
     }
     }
 }
