@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald&display=swap');
+body {
+    background: rgb(93,0,135);
+    background: linear-gradient(215deg, rgba(93,0,135,1) 0%, rgba(0,0,0,1) 100%);
+    min-height: 100vh;
+}
+
+ul {
+    font-family: "Dancing Script", cursive;
+}
+
