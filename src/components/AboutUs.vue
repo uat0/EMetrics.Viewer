@@ -2,7 +2,6 @@
     <div class="korobka">
         <h1>Мы команда SmartTech и разрабатываем EMetrics.Viewer!</h1>
     </div>
-    
 </template>
 
 <script>

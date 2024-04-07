@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import MetricsHome from './App.vue'
+import MetricsHome from './components/Home.vue'
 import MetricsAbout from './components/AboutUs.vue'
 import MetricsCounters from './components/Counters.vue'
 
