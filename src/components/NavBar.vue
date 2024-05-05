@@ -8,7 +8,7 @@
                 <li><router-link class="link" :to="{name: 'home'}">Главная</router-link></li>
                 <li><router-link class="link" :to="{name: 'counters'}">Счётчики</router-link></li>
                 <li><router-link class="link" :to="{name: 'aboutus'}">О нас</router-link></li>
-                <li class="link">Авторизация</li>
+                <li><router-link class="link" :to="{name: 'auth'}">Авторизация</router-link></li>
             </ul>
         </nav>
     </header>

@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 import MetricsHome from './components/Home.vue'
 import MetricsAbout from './components/AboutUs.vue'
 import MetricsCounters from './components/Counters.vue'
+import Authentication from './components/Auth.vue'
 
 export default createRouter({
     history: createWebHashHistory(),
@@ -20,6 +21,11 @@ export default createRouter({
             path: '/counters',
             name: 'counters',
             component: MetricsCounters
+        },
+        {
+            path: '/auth',
+            name: 'auth',
+            component: Authentication
         },
     ]
 })
