@@ -1,23 +1,51 @@
 <template>
     <div class="korobka">
         <h1>Авторизация</h1>
-        <input type="text" placeholder="Введите логин...">
-        <input type="text" placeholder="Введите пароль...">
-        <button @click="confirmauth()">Авторизация</button>
-        <button @click="confirmreg()">Регистрация</button>
+        <input type="text" v-model="login" placeholder="Введите логин...">
+        <input type="password" v-model="password" placeholder="Введите пароль...">
+        <input type="email" v-model="email" placeholder="Введите email...">
+        <button @click="fetch()">Авторизация</button>
+        <button @click="addUser">Регистрация</button>
     </div>
 </template>
 
 <script>
 export default {
-    methods: {
-        confirmauth() {
-            alert("Авторизация")
+  data() {
+    return {
+      login: '',
+      password: '',
+      email: ''
+    };
+  },
+  methods: {
+    addUser() {
+      const userData = {
+        login: this.login,
+        password: this.password,
+        email: this.email
+      };
+      fetch('http:/26.21.184.116:8081/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
         },
-        confirmreg() {
-            alert("Регистрация")
+        body: JSON.stringify(userData)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Ошибка добавления пользователя');
         }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Пользователь успешно добавлен', data);
+      })
+      .catch(error => {
+        console.error('Ошибка:', error);
+      });                                                                           
     }
+  }
 }
 </script>
 
