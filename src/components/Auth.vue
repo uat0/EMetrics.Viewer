@@ -10,22 +10,33 @@
 </template>
 
 <script>
+import AuthService from '@/components/Auth';
+
 export default {
   data() {
     return {
       login: '',
       password: '',
-      email: ''
+      email: '',
+      authentication: false,
+      user: {}
     };
   },
   methods: {
+    async loginuser() {
+      try {
+        await AuthService.loginuser({ username: this.username, password: this.password, email: this.email });
+      } catch (error) {
+        console.error('Ошибка аутентификации:', error);
+      }
+    },
     addUser() {
       const userData = {
         login: this.login,
         password: this.password,
         email: this.email
       };
-      fetch('http:/26.21.184.116:8081/users', {
+      fetch('http:/26.21.184.116:8081', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -43,7 +54,7 @@ export default {
       })
       .catch(error => {
         console.error('Ошибка:', error);
-      });                                                                           
+      });
     }
   }
 }
